@@ -1,0 +1,22 @@
+<h1>LISTE DES GOSSIPS</h1>
+<body>
+	<a href="/static_page/ajouter/" class="btn btn-primary btn-block" role="button">Ajouter un potin</a>
+<br><br><table class = 'table'>
+    <thead>
+      <tr>
+        <th>Créateur</th>
+        <th>Gossips</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<% @gossips.each do |go| %>
+      <tr>
+        <td><%= go.Author %></td>
+        <td><%= go.Content %></td>
+        <td><a href="/static_page/modif/<%= go.id %>" type="button" class="btn btn-success">Modifier</a></td>
+        <td><a href="/static_page/supprimer/<%= go.id %>" type="button" class="btn btn-danger">Supprimer</a></td>
+        <% end %>
+      </tr>      
+    </tbody>
+  </table>
+</body>
